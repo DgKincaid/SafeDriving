@@ -1,12 +1,18 @@
 package com.example.safedriver;
 
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +21,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	private Button startButton;
-	
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,10 +42,9 @@ public class MainActivity extends Activity {
 			    			      Settings.Global.AIRPLANE_MODE_ON, 0), Toast.LENGTH_LONG).show();
 			    */
 				
-					AudioManager am;
-					am = (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
-					
-					am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+				//Settings.Global.putInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0);
+				
+				Factory.LocationProvider(getApplicationContext());
 			  }
 		});
 	}
@@ -50,5 +55,4 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
 }
