@@ -29,10 +29,17 @@ public class Factory {
 	public static void LocationProvider(Context context)
 	{
 		LocationManager lManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+		Toast.makeText(context, "Factory LocationProvider Function", Toast.LENGTH_SHORT).show();
 		
 		if(lManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
 		{
+			Toast.makeText(context, "Factory LocationProvider Function If", Toast.LENGTH_SHORT).show();
 			UserLocation.GetUserSpeedNetwork(lManager, context);
+		}
+		else
+		{
+			Toast.makeText(context, "Factory LocationProvider Function Else", Toast.LENGTH_SHORT).show();
+			UserLocation.GetUserSpeedGPS(lManager, context);
 		}
 	}
 }

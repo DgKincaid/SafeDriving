@@ -39,6 +39,7 @@ public class UserLocation {
 	
 	public static void GetUserSpeedGPS(LocationManager lManager, final Context context)
 	{
+		Toast.makeText(context, "UserLocation GPS Function", Toast.LENGTH_SHORT).show();
 		LocationListener lListener = new LocationListener()
 		{
 			public void onLocationChanged(android.location.Location location)
