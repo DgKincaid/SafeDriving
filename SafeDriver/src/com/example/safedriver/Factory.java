@@ -17,12 +17,12 @@ public class Factory {
 		if(speed >= 10)
 		{
 	        audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-	        Toast.makeText(context, "Speed > 10", Toast.LENGTH_SHORT).show();
+	        //Toast.makeText(context, "Speed > 10", Toast.LENGTH_SHORT).show();
 		}
 		else if(speed < 10 && audioManager.getRingerMode() != 1)
 		{
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
-			Toast.makeText(context, "Speed < 10", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(context, "Speed < 10", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -31,15 +31,15 @@ public class Factory {
 		LocationManager lManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
 		Toast.makeText(context, "Factory LocationProvider Function", Toast.LENGTH_SHORT).show();
 		
-		if(lManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
+		//if((lManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)))
 		{
-			Toast.makeText(context, "Factory LocationProvider Function If", Toast.LENGTH_SHORT).show();
-			UserLocation.GetUserSpeedNetwork(lManager, context);
-		}
-		else
-		{
-			Toast.makeText(context, "Factory LocationProvider Function Else", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(context, "Factory LocationProvider Function Else", Toast.LENGTH_SHORT).show();
 			UserLocation.GetUserSpeedGPS(lManager, context);
 		}
+//		else
+//		{
+//			Toast.makeText(context, "Factory LocationProvider Function If", Toast.LENGTH_SHORT).show();
+//			UserLocation.GetUserSpeedNetwork(lManager, context);
+//		}
 	}
 }
