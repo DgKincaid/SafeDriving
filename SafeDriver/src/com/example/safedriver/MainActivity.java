@@ -16,6 +16,7 @@ import android.content.ContextWrapper;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
 			    */
 				
 				//Settings.Global.putInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0);
-				
+				startButton.setBackground(getResources().getDrawable(R.drawable.stop_traffic_light));
 				Factory.LocationProvider(getApplicationContext());
 			  }
 		});

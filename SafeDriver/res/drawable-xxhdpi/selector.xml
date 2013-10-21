@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    
+<!-- Button Pressed-->
+    <item   
+            android:state_pressed="true"
+            android:drawable="@drawable/stop_traffic_light"
+            />
+    
+<!-- Button Focused-->
+    <item   android:state_focused="true"
+            android:drawable="@drawable/stop_traffic_light"
+            />
+    
+<!-- Button Default Image -->
+    <item   android:drawable="@drawable/start_traffic_light"/>
+ 
+</selector>
