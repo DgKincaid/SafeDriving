@@ -1,4 +1,4 @@
-package com.example.safedriver;
+package com.safedriver;
 
 import java.sql.Date;
 
@@ -18,14 +18,14 @@ public class UserLocation {
 
 	public static void GetUserSpeedNetwork(LocationManager lManager, final Context context)
 	{
-		Toast.makeText(context, "UserLocation GPS Function", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(context, "UserLocation GPS Function", Toast.LENGTH_SHORT).show();
 		LocationListener lListener = new LocationListener()
 		{
 			public void onLocationChanged(android.location.Location location)
 			{
 				location.getLatitude();
 				//Toast.makeText(context, "Current Speed:" + location.getSpeed(), Toast.LENGTH_SHORT).show();
-				Toast.makeText(context, "Current Speed:" + location.getSpeed(), Toast.LENGTH_SHORT).show();
+				//Toast.makeText(context, "Current Speed:" + location.getSpeed(), Toast.LENGTH_SHORT).show();
 				
 				Factory.SpeedTest(location.getSpeed(), context);
 			}
@@ -46,10 +46,10 @@ public class UserLocation {
 		lManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, lListener);
 	}
 	
-	public static void GetUserSpeedGPS(final LocationManager lManager, final Context context)
+	public static void GetUserSpeedGPS(LocationManager lManager, final Context context)
 	{
-		Toast.makeText(context, "UserLocation GPS Function", Toast.LENGTH_SHORT).show();
-		final LocationListener lListener = new LocationListener()
+		//Toast.makeText(context, "UserLocation GPS Function", Toast.LENGTH_SHORT).show();
+		LocationListener lListener = new LocationListener()
 		{
 			public void onLocationChanged(android.location.Location location)
 			{

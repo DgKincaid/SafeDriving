@@ -1,4 +1,6 @@
-package com.example.safedriver;
+package com.safedriver;
+
+import com.safedriver.R;
 
 import android.location.Location;
 import android.location.LocationListener;
@@ -31,7 +33,8 @@ public class MainActivity extends Activity {
 		startButton = (Button) findViewById(R.id.button1);
 		 
 		startButton.setOnClickListener(new View.OnClickListener() {
- 
+		int count = 0;
+		
 			@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 			@SuppressWarnings("deprecation")
 			public void onClick(View arg0) {
@@ -44,8 +47,17 @@ public class MainActivity extends Activity {
 			    */
 				
 				//Settings.Global.putInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0);
-				startButton.setBackground(getResources().getDrawable(R.drawable.stop_traffic_light));
-				Factory.LocationProvider(getApplicationContext());
+				if(count % 2 == 1)
+				{
+					startButton.setBackground(getResources().getDrawable(R.drawable.stop_traffic_light));
+					Factory.LocationProvider(getApplicationContext());
+					count++;
+				}
+				else
+				{
+					startButton.setBackground(getResources().getDrawable(R.drawable.start_traffic_light));
+					count++;
+				}
 			  }
 		});
 	}

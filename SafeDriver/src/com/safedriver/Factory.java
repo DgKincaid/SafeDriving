@@ -1,4 +1,4 @@
-package com.example.safedriver;
+package com.safedriver;
 
 import android.app.Service;
 import android.content.Context;
@@ -12,7 +12,7 @@ public class Factory {
 	public static void SpeedTest(float speed, Context context)
 	{
 		AudioManager audioManager = (AudioManager)context.getSystemService(Service.AUDIO_SERVICE);
-		Toast.makeText(context, "Factory SpeedTest Function", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(context, "Factory SpeedTest Function", Toast.LENGTH_SHORT).show();
 		
 		if(speed >= 10)
 		{
@@ -29,7 +29,7 @@ public class Factory {
 	public static void LocationProvider(Context context)
 	{
 		LocationManager lManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
-		Toast.makeText(context, "Factory LocationProvider Function", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(context, "Factory LocationProvider Function", Toast.LENGTH_SHORT).show();
 		
 		//if((lManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)))
 		{
